@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+
+<body>
+
+<div layout:fragment="content">
+    <div class="col-xs-12">
+        <h1 th:text="'User details for ' + ${user.firstName}+' '+${user.lastName}"/>
+        <p th:text="'First name: ' + ${user.firstName}">firstName</p>
+        <p th:text="'Last name: ' + ${user.lastName}">lastName</p>
+        <p th:text="'E-mail: ' + ${user.email}">email</p>
+    </div>
+</div>
+
+</body>
+</html>

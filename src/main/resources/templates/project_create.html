@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+
+<body>
+
+<div layout:fragment="content">
+    <div class="col-xs-12">
+        <h1 th:text="'Project: '+ ${project.name}">Create project</h1>
+        <form action="#" th:action="@{/create_project}" th:object="${project}" method="post">
+            <label for="name">Project: </label><input id="name" type="text" th:field="*{name}" />
+            <label for="name">Manager: </label><input id="name" type="text" th:field="*{name}" />
+            <button type="submit" name="safe">Create</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

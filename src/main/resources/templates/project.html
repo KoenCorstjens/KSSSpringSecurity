@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+
+<body>
+
+<div layout:fragment="content">
+    <div class="col-xs-12">
+        <h1 th:text="'Project: '+ ${project.name}">Project</h1>
+
+        <p th:text="'Manager: '+ ${project.manager.firstName}+' '+${project.manager.lastName}">Manager</p>
+
+        <p th:text="'Email: '+ ${project.manager.email}">Manager</p>
+    </div>
+</div>
+
+</body>
+</html>

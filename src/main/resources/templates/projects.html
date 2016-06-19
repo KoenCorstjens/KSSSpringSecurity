@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
+<body>
+<div layout:fragment="content">
+    <h1>Projects</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Naam</th>
+            <th>Manager</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="project : ${projects}">
+            <td>
+                <a href="project.html"
+                   th:href="@{|/project/${project.id}|}"
+                   th:text="${project.id}">Id</a>
+            </td>
+            <td>
+                <a href="project.html"
+                   th:href="@{|/project/${project.id}|}"
+                   th:text="${project.name}">Naam</a>
+            </td>
+            <td>
+                <a href="project.html"
+                   th:href="@{|/project/${project.id}|}"
+                   th:text="${project.manager.firstName}+' '+${project.manager.lastName}">manager</a>
+            </td>
+            <td>
+                <form th:action="@{|/project/${project.id}/delete|}" method="post">
+                    <button type="submit">delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

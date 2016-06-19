@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="navbar navbar-static-top bs-docs-nav" th:fragment="header">
+    <img src="logo.png" style="margin-top: 10px; margin-bottom: 10px; height: 150px" th:src="@{/images/logo.png}" />
+    <div th:if="${#httpServletRequest.userPrincipal!=null}">
+        <div th:with="currentUser=${#httpServletRequest.userPrincipal.name}">
+            <ul class="nav nav-tabs" th:if="${currentUser!=null}">
+
+                <li role="projects" th:class="${view} =='project' ? 'active'" class="active"><a th:href="@{/project}">Projects</a></li>
+
+                <li role="my projects" th:class="${view} =='my_project' ? 'active'"><a th:href="@{/project/my}">My projects</a></li>
+
+                <li role="currentUser" th:class="${view} =='users' ? 'active'"><a th:href="@{/user}" >Users</a></li>
+
+                <li role="currentUser" th:class="${view} =='user' ? 'active'"><a th:href="@{/user/details}" th:text="${currentUser}">sample_user</a></li>
+
+                <li role="logout" th:class="${view} =='logout' ? 'active'">
+                    <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">Logout</a>
+                    <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
