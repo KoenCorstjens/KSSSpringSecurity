@@ -44,7 +44,7 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createPost(@ModelAttribute projectDto project, Model model) {
+    public String createPost(@ModelAttribute projectDto project) {
         project = projectService.create(project);
         Long id = project.getId();
         return "redirect:/project/" + id;

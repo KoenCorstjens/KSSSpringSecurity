@@ -3,23 +3,22 @@
 <head>
     <title>Clickjacking Demo</title>
     <style type="text/css">
-        #message-content
-        {
-            width    : 200px;
-            height   : 100px;
-            overflow : hidden;
+        #message-content {
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
             top: 0;
-            position : absolute;
-            opacity: 0;
+            position: absolute;
+            opacity: 0; //0.5
             border: 1px solid black;
         }
-        #message-content iframe
-        {
-            position : absolute;
-            top      : -246px;
-            left     : -906px;
-            width    : 1280px;
-            height   : 1200px;
+
+        #message-content iframe {
+            position: absolute;
+            top: -340px;
+            left: -899px;
+            width: 1280px;
+            height: 1200px;
         }
     </style>
 </head>

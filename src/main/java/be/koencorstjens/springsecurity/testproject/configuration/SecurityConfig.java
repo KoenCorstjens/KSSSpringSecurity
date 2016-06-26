@@ -23,16 +23,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-//   @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().withUser("kcorstjens@example.eu").password("password").roles("USER")
-//                .and().withUser("krobbrecht@example.eu").password("password").roles("ADMIN");
-//    }
+/*
+   @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("kcorstjens@example.eu").password("password").roles("USER")
+                .and().withUser("krobbrecht@example.eu").password("password").roles("ADMIN");
+    }
+*/
 
 
 
 
-    @Override
+
+   @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests()
@@ -46,12 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().permitAll()
 
 
-                //.and().headers().frameOptions().disable()
-                //.and().csrf().disable();
+            .and().headers().frameOptions().disable()
+            .and().csrf().disable();
         ;
 
     }
-
 
 
 
@@ -62,12 +64,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-
+/*
     @Bean
     public SecurityEvaluationContextExtension securityEvaluationContextExtension() {
         return new SecurityEvaluationContextExtension();
     }
+*/
 
 
 }

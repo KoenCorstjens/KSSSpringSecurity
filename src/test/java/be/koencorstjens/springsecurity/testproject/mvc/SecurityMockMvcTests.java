@@ -74,6 +74,15 @@ public class SecurityMockMvcTests {
                 .andExpect(status().isForbidden());
     }
 
+    @Test
+    @WithCustomMockUser
+    public void deleteProject() throws Exception {
+        MockHttpServletRequestBuilder compose = post("/project/2/delete").with(csrf());
+        mvc
+                .perform(compose)
+                .andExpect(status().is3xxRedirection());
+    }
+
 
 
     @Test
