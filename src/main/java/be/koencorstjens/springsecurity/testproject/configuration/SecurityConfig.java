@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-
+/*
    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.
@@ -54,16 +54,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ;
 
     }
+*/
 
-
-
+/*
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth, UserDetailsService userDetailsService) throws Exception {
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 
-
+*/
 /*
     @Bean
     public SecurityEvaluationContextExtension securityEvaluationContextExtension() {
